@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
-const Login = ({ isAuthenticated, history }) => {
+const Signup = ({ isAuthenticated, history }) => {
 
   useEffect(() => {
     // history.redirect(ROUTES.DASHBOARD);
@@ -13,10 +13,10 @@ const Login = ({ isAuthenticated, history }) => {
 
   return (
     <div>
-      Login Form
+      Signup form
     </div>
   );
 };
 
-export default Login;
+export default Signup;
 
