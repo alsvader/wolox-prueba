@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
+import PATHS from '../../config/paths';
 
 const PrivateRoute = ({
   isAuthenticated,
@@ -12,7 +13,7 @@ const PrivateRoute = ({
       exact={exact}
       component={(props) =>
         isAuthenticated ? <Component {...props} />
-          : <Redirect to="/login" />
+          : <Redirect to={PATHS.SIGNUP} />
       }
     />
   );

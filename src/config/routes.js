@@ -1,5 +1,5 @@
 import PATHS from './paths';
-import Home from '../screens/Dashboard/Dashboard';
+import Home from '../screens/Home/Home';
 import Signup from '../screens/Signup/Signup';
 import Terms from '../screens/Terms/Terms';
 import Technologies from '../screens/Technologies/Technologies';
