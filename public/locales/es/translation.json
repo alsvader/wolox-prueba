@@ -1,3 +1,19 @@
 {
-  "name": "Nombre"
+  "name": "Nombre",
+  "lastname": "Apellido",
+  "country": "País",
+  "province": "Provincia",
+  "select_option": "Seleccione una opción",
+  "email": "Correo electrónico",
+  "phoneNumber": "Número de teléfono",
+  "password": "Contraseña",
+  "repeatPassword": "Confirmar contraseña",
+  "submit": "Enviar",
+  "inputNameError": "El campo nombre no puede ser vacío o tener más de 30 caracteres",
+  "inputLastnameError": "El campo apellido no puede ser vacío o tener más de 30 caracteres",
+  "optionMustBeSelected": "Debe seleccionar una opción",
+  "inputEmailError": "Debe ingresar un correo válido",
+  "phoneNumberError": "Número de teléfono inválido",
+  "passwordError": "Contraseña debe contener al menos 6 caracteres y valores alfanuméricos",
+  "repPasswordError": "Contraseña y confirmar contraseña no son iguales"
 }

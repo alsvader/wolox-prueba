@@ -1,3 +1,19 @@
 {
-  "name": "Name"
+  "name": "Name",
+  "lastname": "Last name",
+  "country": "Country",
+  "province": "Province",
+  "select_option": "Select an option",
+  "email": "Email",
+  "phoneNumber": "Phone number",
+  "password": "Password",
+  "repeatPassword": "Confirm password",
+  "submit": "Submit",
+  "inputNameError": "The name field cannot be empty or have more than 30 characters",
+  "inputLastnameError": "The last name field cannot be empty or have more than 30 characters",
+  "optionMustBeSelected": "An option must be selected",
+  "inputEmailError": "You must enter a valid email",
+  "phoneNumberError": "Invalid phone number",
+  "passwordError": "Password must be 6 o more characters length and only alphanumeric values",
+  "repPasswordError": "The password and confirmd password do not match"
 }

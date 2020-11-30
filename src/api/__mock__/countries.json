@@ -1,0 +1,132 @@
+[
+  {
+    "label": "Argentina",
+    "value": "argentina",
+    "provinces": [
+      {
+        "label": "Buenos Aires",
+        "value": "buenos_aires"
+      },
+      {
+        "label": "Córdoba",
+        "value": "cordova"
+      },
+      {
+        "label": "Santa Fé",
+        "value": "santa_fe"
+      },
+      {
+        "label": "Mendoza",
+        "value": "mendoza"
+      },
+      {
+        "label": "Chaco",
+        "value": "chaco"
+      }
+    ]
+  },
+  {
+    "label": "Chile",
+    "value": "chile",
+    "provinces": [
+      {
+        "label": "Santiago",
+        "value": "santiago"
+      },
+      {
+        "label": "Valparaíso",
+        "value": "valparaiso"
+      },
+      {
+        "label": "Aconcagua",
+        "value": "aconcagua"
+      },
+      {
+        "label": "Coquimbo",
+        "value": "coquimbo"
+      },
+      {
+        "label": "Atacama",
+        "value": "atacama"
+      }
+    ]
+  },
+  {
+    "label": "Colombia",
+    "value": "colombia",
+    "provinces": [
+      {
+        "label": "Medellín",
+        "value": "medellín"
+      },
+      {
+        "label": "Arauca",
+        "value": "arauca"
+      },
+      {
+        "label": "Barranquilla",
+        "value": "barranquilla"
+      },
+      {
+        "label": "Tunja",
+        "value": "tunja"
+      },
+      {
+        "label": "Manizales",
+        "value": "manizales"
+      }
+    ]
+  },
+  {
+    "label": "México",
+    "value": "mexico",
+    "provinces": [
+      {
+        "label": "Ciudad de México",
+        "value": "ciudad_de_mexico"
+      },
+      {
+        "label": "Tabasco",
+        "value": "tabasco"
+      },
+      {
+        "label": "Guadalajara",
+        "value": "guadalajara"
+      },
+      {
+        "label": "Yucatán",
+        "value": "yucatan"
+      },
+      {
+        "label": "Quintana Roo",
+        "value": "quintana_roo"
+      }
+    ]
+  },
+  {
+    "label": "Perú",
+    "value": "peru",
+    "provinces": [
+      {
+        "label": "Chachapoyas",
+        "value": "chachapoyas"
+      },
+      {
+        "label": "Bagua",
+        "value": "bagua"
+      },
+      {
+        "label": "Bongara",
+        "value": "bongara"
+      },
+      {
+        "label": "Condorcanqui",
+        "value": "condorcanqui"
+      },
+      {
+        "label": "Luya",
+        "value": "luya"
+      }
+    ]
+  }
+]
