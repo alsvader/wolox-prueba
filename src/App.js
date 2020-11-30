@@ -10,13 +10,7 @@ import store from './redux/store';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/login" component={Login} exact />
-          <PrivateRoute isAuthenticated={false} component={Dashboard} path="/dashboard" />
-        </Switch>
-      </Router>
+
     </Provider>
   );
 }

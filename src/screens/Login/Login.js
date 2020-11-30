@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 
-const Login = ({ isAuthenticated }) => {
+const Login = ({ isAuthenticated, history }) => {
 
   useEffect(() => {
     // history.redirect(ROUTES.DASHBOARD);

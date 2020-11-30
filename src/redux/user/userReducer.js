@@ -1,8 +1,8 @@
 import TYPES from './userTypes';
 
 const initialState = {
+  data: null,
   isAuthenticated: false,
-  user: null,
 };
 
 const reducer = (state = initialState, { type, payload }) => {
