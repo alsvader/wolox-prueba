@@ -28,7 +28,11 @@ const RouterApp = ({ isAuthenticated }) => {
   )
 }
 
-const mapStateToProps = ({ }) => ({});
+const mapStateToProps = ({
+  user: { isAuthenticated },
+}) => ({
+  isAuthenticated,
+});
 
 RouterApp.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
