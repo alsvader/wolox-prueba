@@ -16,6 +16,8 @@ const PHONE_FORMAT = /^[0-9]{10}$/i;
 
 const PASSWORD_FORMAT = /^[A-Z0-9]{6,}$/i;
 
+const GLOBAL_STATE = 'GLOBAL_STATE';
+
 export {
   AVAILABLE_LNG,
   LANGUAGES_KEY,
@@ -23,4 +25,5 @@ export {
   EMAIL_FORMAT,
   PHONE_FORMAT,
   PASSWORD_FORMAT,
+  GLOBAL_STATE,
 };

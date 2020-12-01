@@ -6,7 +6,10 @@ import { useTranslation } from 'react-i18next';
 import PATHS from '../../config/paths';
 import { DEFAULT_SELECT } from '../../config/constants';
 import { validateInput, isFormValid } from '../../utils/inputValidation';
+import { mapDataToSignup } from '../../utils/mapDataToBody';
 import countries from '../../api/__mock__/countries.json';
+
+import signup from '../../redux/middlewares/signupMiddleware';
 
 const initialState = {
   value: '',
@@ -14,7 +17,7 @@ const initialState = {
   isValid: false,
 };
 
-const Signup = ({ isAuthenticated, history }) => {
+const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
   const [state, setstate] = useState({
     inputName: { ...initialState },
     inputLastname: { ...initialState },
@@ -107,6 +110,8 @@ const Signup = ({ isAuthenticated, history }) => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
+    const body = mapDataToSignup(state);
+    dispatch(signup(body));
   };
 
   if (isAuthenticated) {
@@ -219,12 +224,18 @@ const Signup = ({ isAuthenticated, history }) => {
 
 const mapStateToProps = ({
   user: { isAuthenticated },
+  system: { isLoading, errorMessage }
 }) => ({
   isAuthenticated,
+  isLoading,
+  errorMessage
 });
 
 Signup.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,

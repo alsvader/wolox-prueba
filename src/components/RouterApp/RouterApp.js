@@ -5,7 +5,7 @@ import NotFound from '../../screens/NotFound/NotFound';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import routes from '../../config/routes';
 
-const RouterApp = ({ isAuthenticated }) => {
+const RouterApp = ({ dispatch, isAuthenticated }) => {
   return (
     <Router>
       <Switch>

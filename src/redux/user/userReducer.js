@@ -1,14 +1,12 @@
 import TYPES from './userTypes';
+import { getInitialUserState } from '../../utils/systemUtils';
 
-const initialState = {
-  data: null,
-  isAuthenticated: false,
-};
+const initialState = getInitialUserState();
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case TYPES.SET_USER:
-      return { ...payload };
+      return { user: payload, isAuthenticated: true };
     default:
       return state;
   }
