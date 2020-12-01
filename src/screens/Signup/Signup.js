@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PATHS from '../../config/paths';
 import { DEFAULT_SELECT } from '../../config/constants';
-import { validateInput } from '../../utils/inputValidation';
+import { validateInput, isFormValid } from '../../utils/inputValidation';
 import countries from '../../api/__mock__/countries.json';
 
 const initialState = {
@@ -110,16 +110,7 @@ const Signup = ({ isAuthenticated, history }) => {
     e.preventDefault();
   };
 
-  const canSubmit = () => {
-    let disabled = '';
-
-    for (const prop in state) {
-      if (!state[prop].isValid) {
-        disabled = 'disabled';
-      }
-    }
-    return disabled;
-  }
+  const isValidForm = () => true;
 
   if (isAuthenticated) {
     return <Redirect to={PATHS.LIST_TECHNOLIGIES} />
@@ -135,6 +126,8 @@ const Signup = ({ isAuthenticated, history }) => {
     password,
     repeatedPassword,
   } = state;
+
+  const isBtnDisabled = !isFormValid(state);
 
   return (
     <div>
@@ -221,10 +214,7 @@ const Signup = ({ isAuthenticated, history }) => {
         />
         {repeatedPassword.errMessage && <span>{t(repeatedPassword.errMessage)}</span>}
 
-        <input
-          type="submit"
-          value={t('submit')}
-        />
+        <button type="submit" disabled={isBtnDisabled}>{t('submit')}</button>
       </form>
     </div>
   );

@@ -38,4 +38,20 @@ function validateInput(name, value) {
   return errMessage;
 }
 
-export { validateInput }
+function isFormValid(inputs) {
+  let validations = [];
+
+  Object.keys(inputs).forEach(key => {
+    validations.push(inputs[key].isValid);
+  });
+
+  const filtered = validations.find(x => x === false);
+
+  if (!filtered) {
+    return false;
+  }
+
+  return true;
+}
+
+export { validateInput, isFormValid }
