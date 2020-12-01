@@ -8,6 +8,7 @@
   "phoneNumber": "Phone number",
   "password": "Password",
   "repeatPassword": "Confirm password",
+  "checkboxTerms": "Accept Terms and Conditions",
   "submit": "Submit",
   "inputNameError": "The name field cannot be empty or have more than 30 characters",
   "inputLastnameError": "The last name field cannot be empty or have more than 30 characters",

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PATHS from '../../config/paths';
 import { DEFAULT_SELECT } from '../../config/constants';
@@ -215,6 +215,14 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
           required
         />
         {repeatedPassword.errMessage && <span>{t(repeatedPassword.errMessage)}</span>}
+
+        <input
+          type="checkbox"
+          name="termsCondition"
+        />
+        <label htmlFor="termsCondition">
+          <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
+        </label>
 
         <button type="submit" disabled={!isBtnDisabled}>{t('submit')}</button>
       </form>

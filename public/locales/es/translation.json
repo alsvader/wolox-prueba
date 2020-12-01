@@ -8,6 +8,7 @@
   "phoneNumber": "Número de teléfono",
   "password": "Contraseña",
   "repeatPassword": "Confirmar contraseña",
+  "checkboxTerms": "Acepto Términos y Condiciones",
   "submit": "Enviar",
   "inputNameError": "El campo nombre no puede ser vacío o tener más de 30 caracteres",
   "inputLastnameError": "El campo apellido no puede ser vacío o tener más de 30 caracteres",
