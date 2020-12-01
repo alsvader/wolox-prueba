@@ -2,6 +2,7 @@ const TYPES = {
   SET_LOADING: 'SET_LOADING',
   SET_ERROR: 'SET_ERROR',
   SET_LIST_TECH: 'SET_LIST_TECH',
+  SORT_BY_NAME: 'SORT_BY_NAME',
 };
 
 export default TYPES;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import getTech from '../../redux/middlewares/listTechMiddleware';
 import { DEFAULT_SELECT } from '../../config/constants';
+import systemActions from '../../redux/system/systemActions';
 
 const Technologies = ({
   dispatch,
@@ -17,7 +18,10 @@ const Technologies = ({
     dispatch(getTech());
   }, [dispatch]);
 
-  const handleOrderChange = e => setoOderBy(e.target.value);
+  const handleOrderChange = e => {
+    setoOderBy(e.target.value);
+    dispatch(systemActions.sortByName(e.target.value));
+  };
 
   return (
     <div>

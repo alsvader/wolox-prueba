@@ -1,6 +1,8 @@
+import { TYPES_SORT } from '../config/constants';
+
 const sortByNameAsc = (a, b) => {
-  const x = a.name.toLowerCase();
-  const y = b.name.toLowerCase();
+  const x = a.tech.toLowerCase();
+  const y = b.tech.toLowerCase();
 
   if (x < y) return -1;
 
@@ -10,8 +12,8 @@ const sortByNameAsc = (a, b) => {
 }
 
 const sortByNameDesc = (a, b) => {
-  const x = a.name.toLowerCase();
-  const y = b.name.toLowerCase();
+  const x = a.tech.toLowerCase();
+  const y = b.tech.toLowerCase();
 
   if (x < y) return 1;
 
@@ -20,4 +22,15 @@ const sortByNameDesc = (a, b) => {
   return 0;
 }
 
-export { sortByNameAsc, sortByNameDesc }
+const getSortFunc = (type) => {
+  switch (type) {
+    case TYPES_SORT.SORT_ASC:
+      return sortByNameAsc;
+    case TYPES_SORT.SORT_DESC:
+      return sortByNameDesc;
+    default:
+      break;
+  }
+}
+
+export { sortByNameAsc, sortByNameDesc, getSortFunc }

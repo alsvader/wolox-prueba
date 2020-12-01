@@ -13,6 +13,10 @@ const ACTIONS = {
     type: TYPES.SET_LIST_TECH,
     payload: data,
   }),
+  sortByName: sort => ({
+    type: TYPES.SORT_BY_NAME,
+    payload: sort,
+  }),
 };
 
 export default ACTIONS

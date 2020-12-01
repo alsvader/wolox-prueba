@@ -18,6 +18,11 @@ const PASSWORD_FORMAT = /^[A-Z0-9]{6,}$/i;
 
 const GLOBAL_STATE = 'GLOBAL_STATE';
 
+const TYPES_SORT = {
+  SORT_ASC: 'asc',
+  SORT_DESC: 'desc',
+};
+
 export {
   AVAILABLE_LNG,
   LANGUAGES_KEY,
@@ -26,4 +31,5 @@ export {
   PHONE_FORMAT,
   PASSWORD_FORMAT,
   GLOBAL_STATE,
+  TYPES_SORT,
 };
