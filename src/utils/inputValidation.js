@@ -45,9 +45,9 @@ function isFormValid(inputs) {
     validations.push(inputs[key].isValid);
   });
 
-  const filtered = validations.find(x => x === false);
+  const filtered = validations.filter(x => x === false);
 
-  if (!filtered) {
+  if (filtered.length > 0) {
     return false;
   }
 

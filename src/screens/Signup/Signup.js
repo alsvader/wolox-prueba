@@ -93,7 +93,6 @@ const Signup = ({ isAuthenticated, history }) => {
     const { name, value } = e.target;
 
     const isValid = value === state.password.value;
-    console.log(isValid);
     const errMessage = !isValid ? 'repPasswordError' : '';
 
     setstate({
@@ -110,8 +109,6 @@ const Signup = ({ isAuthenticated, history }) => {
     e.preventDefault();
   };
 
-  const isValidForm = () => true;
-
   if (isAuthenticated) {
     return <Redirect to={PATHS.LIST_TECHNOLIGIES} />
   }
@@ -127,7 +124,7 @@ const Signup = ({ isAuthenticated, history }) => {
     repeatedPassword,
   } = state;
 
-  const isBtnDisabled = !isFormValid(state);
+  const isBtnDisabled = isFormValid(state);
 
   return (
     <div>
@@ -214,7 +211,7 @@ const Signup = ({ isAuthenticated, history }) => {
         />
         {repeatedPassword.errMessage && <span>{t(repeatedPassword.errMessage)}</span>}
 
-        <button type="submit" disabled={isBtnDisabled}>{t('submit')}</button>
+        <button type="submit" disabled={!isBtnDisabled}>{t('submit')}</button>
       </form>
     </div>
   );
