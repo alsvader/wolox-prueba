@@ -17,5 +17,8 @@
   "phoneNumberError": "Invalid phone number",
   "passwordError": "Password must be 6 o more characters length and only alphanumeric values",
   "repPasswordError": "The password and confirmd password do not match",
-  "termsError": "You must accept terms and conditions"
+  "termsError": "You must accept terms and conditions",
+  "orderBy": "Order by",
+  "nameAsc": "Name: Asc",
+  "nameDesc": "Name: Desc"
 }

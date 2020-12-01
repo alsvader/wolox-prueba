@@ -1,9 +1,54 @@
-const Technologies = () => {
+import { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import getTech from '../../redux/middlewares/listTechMiddleware';
+import { DEFAULT_SELECT } from '../../config/constants';
+
+const Technologies = ({
+  dispatch,
+  isLoading,
+  errorMessage,
+  listTechFiltered,
+}) => {
+  const [orderBy, setoOderBy] = useState('');
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    dispatch(getTech());
+  }, [dispatch]);
+
+  const handleOrderChange = e => setoOderBy(e.target.value);
+
   return (
     <div>
-      Technologies
+      <label htmlFor="orderedBy">{t('orderBy')}</label>
+      <select
+        name="orderedBy"
+        defaultValue={DEFAULT_SELECT}
+        value={orderBy}
+        onChange={handleOrderChange}
+      >
+        <option value={DEFAULT_SELECT}>{t('select_option')}</option>
+        <option value="asc">{t('nameAsc')}</option>
+        <option value="desc">{t('nameDesc')}</option>
+      </select>
+
+      {listTechFiltered.map((item, key) => {
+        return <div key={key}>
+          <h1>{item.tech}</h1>
+          <img src={item.logo} alt={item.tech} />
+        </div>
+      })}
     </div>
   )
 }
 
-export default Technologies;
+const mapStateToProps = ({
+  system: { isLoading, errorMessage, listTechFiltered }
+}) => ({
+  isLoading,
+  errorMessage,
+  listTechFiltered,
+});
+
+export default connect(mapStateToProps)(Technologies);

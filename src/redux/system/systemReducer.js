@@ -2,7 +2,9 @@ import TYPES from './systemTypes';
 
 const initialState = {
   isLoading: false,
-  errorMessage: ''
+  errorMessage: '',
+  listTech: [],
+  listTechFiltered: [],
 }
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -11,6 +13,8 @@ const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: payload, errorMessage: '' };
     case TYPES.SET_ERROR:
       return { ...state, isLoading: false, errorMessage: payload };
+    case TYPES.SET_LIST_TECH:
+      return { ...state, listTech: payload, listTechFiltered: payload };
     default:
       return state;
   }
