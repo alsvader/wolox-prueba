@@ -16,5 +16,6 @@
   "inputEmailError": "Debe ingresar un correo válido",
   "phoneNumberError": "Número de teléfono inválido",
   "passwordError": "Contraseña debe contener al menos 6 caracteres y valores alfanuméricos",
-  "repPasswordError": "Contraseña y confirmar contraseña no son iguales"
+  "repPasswordError": "Contraseña y confirmar contraseña no son iguales",
+  "termsError": "Debe aceptar los términos y condiciones"
 }

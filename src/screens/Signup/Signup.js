@@ -27,6 +27,7 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
     phoneNumber: { ...initialState },
     password: { ...initialState },
     repeatedPassword: { ...initialState },
+    checkBoxTerms: { ...initialState },
   });
   const [listProvinces, setListProvinces] = useState([]);
   const { t } = useTranslation();
@@ -108,6 +109,17 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
     });
   };
 
+  const handleCheckboxChange = e => {
+    const { name, checked } = e.target;
+    setstate({
+      ...state,
+      [name]: {
+        isValid: checked,
+        errMessage: !checked ? 'termsError' : ''
+      },
+    })
+  };
+
   const handleFormSubmit = e => {
     e.preventDefault();
     const body = mapDataToSignup(state);
@@ -127,6 +139,7 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
     phoneNumber,
     password,
     repeatedPassword,
+    checkBoxTerms,
   } = state;
 
   const isBtnDisabled = isFormValid(state);
@@ -218,11 +231,14 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
 
         <input
           type="checkbox"
-          name="termsCondition"
+          name="checkBoxTerms"
+          onChange={handleCheckboxChange}
         />
-        <label htmlFor="termsCondition">
+        <label htmlFor="checkBoxTerms">
           <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
         </label>
+
+        {checkBoxTerms.errMessage && <span>{t(checkBoxTerms.errMessage)}</span>}
 
         <button type="submit" disabled={!isBtnDisabled}>{t('submit')}</button>
       </form>
