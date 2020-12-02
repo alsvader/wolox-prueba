@@ -15,7 +15,7 @@
   "optionMustBeSelected": "An option must be selected",
   "inputEmailError": "You must enter a valid email",
   "phoneNumberError": "Invalid phone number",
-  "passwordError": "Password must be 6 o more characters length and only alphanumeric values",
+  "passwordError": "Password must be 6 or more characters length and only alphanumeric values",
   "repPasswordError": "The password and confirmd password do not match",
   "termsError": "You must accept terms and conditions",
   "orderBy": "Order by",
