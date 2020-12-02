@@ -21,5 +21,8 @@
   "orderBy": "Order by",
   "nameAsc": "Name: Asc",
   "nameDesc": "Name: Desc",
-  "searchLabel": "Search"
+  "searchLabel": "Search",
+  "backend": "Back-end",
+  "frontend": "Front-end",
+  "mobile": "Mobile"
 }

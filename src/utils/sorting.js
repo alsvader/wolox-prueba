@@ -41,9 +41,40 @@ const filterByName = (list, payload) => {
   );
 }
 
-export {
-  sortByNameAsc,
-  sortByNameDesc,
-  getSortFunc,
-  filterByName,
+const filterByType = (list, types) => {
+  if (types.length === 0) {
+    return list;
+  }
+
+  let finalList = [];
+
+  types.forEach(item => {
+    const items = list.filter(x => x.type.toLowerCase() === item.type);
+    finalList = [...finalList, ...items];
+  });
+
+  return finalList;
 }
+
+const filterSearch = (listTech, filtersData) => {
+  const listToFilter = [...listTech];
+
+  let { types, term, orderBy } = filtersData;
+  types = types.filter(x => x.value);
+
+  let finalList = [];
+
+  // apply type filter
+  finalList = filterByType(listToFilter, types);
+
+  // apply term search filter
+  finalList = filterByName(finalList, term);
+
+  // apply sorting
+  const sortFunc = getSortFunc(orderBy);
+  finalList.sort(sortFunc);
+
+  return finalList;
+};
+
+export default filterSearch;

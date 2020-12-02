@@ -1,5 +1,5 @@
 import TYPES from './systemTypes';
-import { getSortFunc, filterByName } from '../../utils/sorting';
+import filterSearch from '../../utils/sorting';
 
 const initialState = {
   isLoading: false,
@@ -16,18 +16,12 @@ const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: false, errorMessage: payload };
     case TYPES.SET_LIST_TECH:
       return { ...state, listTech: payload, listTechFiltered: payload };
-    case TYPES.SORT_BY_NAME: {
+    case TYPES.INIT_FILTER: {
 
-      const { listTechFiltered } = state;
-      const sortFunc = getSortFunc(payload);
-      const sorted = listTechFiltered.slice().sort(sortFunc);
-
-      return { ...state, listTechFiltered: sorted };
-    }
-    case TYPES.FILTER_BY_NAME: {
       const { listTech } = state;
-      const filtered = filterByName(listTech, payload);
-      return { ...state, listTechFiltered: filtered };
+      const finalList = filterSearch(listTech, payload);
+
+      return { ...state, listTechFiltered: finalList };
     }
     default:
       return state;

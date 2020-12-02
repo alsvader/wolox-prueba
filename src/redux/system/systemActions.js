@@ -13,13 +13,9 @@ const ACTIONS = {
     type: TYPES.SET_LIST_TECH,
     payload: data,
   }),
-  sortByName: sort => ({
-    type: TYPES.SORT_BY_NAME,
-    payload: sort,
-  }),
-  filterByName: name => ({
-    type: TYPES.FILTER_BY_NAME,
-    payload: name,
+  initFilter: filters => ({
+    type: TYPES.INIT_FILTER,
+    payload: filters,
   }),
 };
 

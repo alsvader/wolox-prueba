@@ -5,29 +5,95 @@ import { DEFAULT_SELECT } from '../../config/constants';
 import systemActions from '../../redux/system/systemActions';
 
 const FilterBar = ({ dispatch, listTechFiltered }) => {
-  const [orderBy, setoOderBy] = useState(DEFAULT_SELECT);
+  const [filters, setFilters] = useState({
+    term: '',
+    backend: false,
+    frontend: false,
+    mobile: false,
+    orderBy: DEFAULT_SELECT,
+  })
   const { t } = useTranslation();
 
-  const handleOrderChange = e => {
-    const { value } = e.target;
-    setoOderBy(value);
-    dispatch(systemActions.sortByName(value));
+  const handleOnchange = e => {
+    const { name, value } = e.target;
+
+    const stateUpdated = { ...filters };
+    stateUpdated[name] = value;
+    initSearch(stateUpdated);
+
+    setFilters({ ...filters, [name]: value });
   };
 
-  const filterBynName = e => {
-    dispatch(systemActions.filterByName(e.target.value));
+  const handleCheckboxChange = e => {
+    const { name, checked } = e.target;
+
+    const stateUpdated = { ...filters };
+    stateUpdated[name] = checked;
+    initSearch(stateUpdated);
+
+    setFilters({ ...filters, [name]: checked });
+  }
+
+  const initSearch = (state) => {
+    const data = {
+      types: [
+        { type: 'back-end', value: state.backend },
+        { type: 'front-end', value: state.frontend },
+        { type: 'mobile', value: state.mobile },
+      ],
+      term: state.term,
+      orderBy: state.orderBy,
+    };
+    dispatch(systemActions.initFilter(data));
   };
+
+  const {
+    backend,
+    frontend,
+    mobile,
+    term,
+    orderBy,
+  } = filters;
 
   return (
     <div>
-      <label htmlFor="">{t('searchLabel')}</label>
-      <input type="text" onChange={filterBynName} />
+      <label htmlFor="term">{t('searchLabel')}</label>
+      <input
+        name="term"
+        type="text"
+        value={term}
+        onChange={handleOnchange}
+      />
 
-      <label htmlFor="orderedBy">{t('orderBy')}</label>
+      <input
+        type="checkbox"
+        name="backend"
+        value={backend}
+        onChange={handleCheckboxChange}
+      />
+      <label htmlFor="backend">{t('backend')}</label>
+
+      <input
+        type="checkbox"
+        name="frontend"
+        value={frontend}
+        onChange={handleCheckboxChange}
+      />
+      <label htmlFor="frontend">{t('frontend')}</label>
+
+      <input
+        type="checkbox"
+        name="mobile"
+        value={mobile}
+        onChange={handleCheckboxChange}
+      />
+      <label htmlFor="mobile">{t('mobile')}</label>
+
+      <label htmlFor="orderBy">{t('orderBy')}</label>
       <select
-        name="orderedBy"
+        name="orderBy"
         value={orderBy}
-        onChange={handleOrderChange}
+        onChange={handleOnchange}
       >
         <option value={DEFAULT_SELECT}>{t('select_option')}</option>
         <option value="asc">{t('nameAsc')}</option>
