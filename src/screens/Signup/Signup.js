@@ -146,6 +146,9 @@ const Signup = ({ dispatch, isAuthenticated, isLoading, errorMessage }) => {
 
   return (
     <div>
+      {errorMessage && (
+        <span>{errorMessage}</span>
+      )}
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="inputName">{t('name')}</label>
         <input
