@@ -18,12 +18,11 @@ const reducer = (state = initialState, { type, payload }) => {
       return { ...state, listTech: payload, listTechFiltered: payload };
     case TYPES.SORT_BY_NAME: {
 
-      const sortFunc = getSortFunc(payload);
       const { listTechFiltered } = state;
-      const result = listTechFiltered.sort(sortFunc);
-      console.log(result);
+      const sortFunc = getSortFunc(payload);
+      const sorted = listTechFiltered.slice().sort(sortFunc);
 
-      return { ...state, listTechFiltered };
+      return { ...state, listTechFiltered: sorted };
     }
     case TYPES.FILTER_BY_NAME: {
       const { listTech } = state;
