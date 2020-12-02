@@ -11,7 +11,7 @@ const Technologies = ({
   errorMessage,
   listTechFiltered,
 }) => {
-  const [orderBy, setoOderBy] = useState('');
+  const [orderBy, setoOderBy] = useState(DEFAULT_SELECT);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -23,12 +23,18 @@ const Technologies = ({
     dispatch(systemActions.sortByName(e.target.value));
   };
 
+  const filterBynName = e => {
+    dispatch(systemActions.filterByName(e.target.value));
+  };
+
   return (
     <div>
+      <label htmlFor="">{t('searchLabel')}</label>
+      <input type="text" onChange={filterBynName} />
+
       <label htmlFor="orderedBy">{t('orderBy')}</label>
       <select
         name="orderedBy"
-        defaultValue={DEFAULT_SELECT}
         value={orderBy}
         onChange={handleOrderChange}
       >

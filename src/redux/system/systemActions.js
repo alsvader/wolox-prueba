@@ -17,6 +17,10 @@ const ACTIONS = {
     type: TYPES.SORT_BY_NAME,
     payload: sort,
   }),
+  filterByName: name => ({
+    type: TYPES.FILTER_BY_NAME,
+    payload: name,
+  }),
 };
 
 export default ACTIONS

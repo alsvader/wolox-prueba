@@ -20,5 +20,6 @@
   "termsError": "Debe aceptar los términos y condiciones",
   "orderBy": "Ordenar por",
   "nameAsc": "Nombre: ascendente",
-  "nameDesc": "Nombre: descendente"
+  "nameDesc": "Nombre: descendente",
+  "searchLabel": "Buscar"
 }

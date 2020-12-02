@@ -20,5 +20,6 @@
   "termsError": "You must accept terms and conditions",
   "orderBy": "Order by",
   "nameAsc": "Name: Asc",
-  "nameDesc": "Name: Desc"
+  "nameDesc": "Name: Desc",
+  "searchLabel": "Search"
 }

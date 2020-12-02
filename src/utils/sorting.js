@@ -33,4 +33,17 @@ const getSortFunc = (type) => {
   }
 }
 
-export { sortByNameAsc, sortByNameDesc, getSortFunc }
+const filterByName = (list, payload) => {
+  return list.filter(
+    x => x.tech.
+      toLowerCase()
+      .includes(payload.toLowerCase())
+  );
+}
+
+export {
+  sortByNameAsc,
+  sortByNameDesc,
+  getSortFunc,
+  filterByName,
+}
