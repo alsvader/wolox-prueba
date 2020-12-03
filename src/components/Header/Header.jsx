@@ -12,7 +12,7 @@ import logo from '../../assets/images/logo_full_color.svg';
 const Header = ({ isAuthenticated }) => {
   const { t } = useTranslation();
   return (
-    <nav className="header">
+    <nav className={['header', 'backgroundImage'].join(' ')}>
       <img className="img" src={logo} alt="wolox logo" />
       <ul>
         <li>

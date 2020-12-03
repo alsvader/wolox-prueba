@@ -29,5 +29,9 @@
   "benefits": "Beneficios",
   "signup_btn": "Registrarse",
   "technologies": "Tecnologías",
-  "logout": "Salir"
+  "logout": "Salir",
+  "welcomeTo": "Bienvenido a tu",
+  "technicalInterview": "Entrevista Técnica",
+  "in": "en",
+  "wolox": "Wolox"
 }

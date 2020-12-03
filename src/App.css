@@ -1,10 +1,12 @@
 .container {
   width: 100%;
 }
-.header {
+.backgroundImage {
   background-image: url(./assets/images/Backgrounds/Bg_Header.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.header {
   padding-top: 8%;
   width: 100%;
 }

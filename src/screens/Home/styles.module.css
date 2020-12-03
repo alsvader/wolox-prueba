@@ -1,0 +1,22 @@
+.welcomeBox {
+  margin-left: 2.5%;
+  width: 95%;
+}
+.welcomeBox div {
+  margin-bottom: 16%;
+  width: 100%;
+}
+.welcomeBox p {
+  font-size: 24px;
+  margin: 20px 0;
+  text-align: center;
+}
+.welcomeBox img {
+  width: 100%;
+}
+.boldText {
+  font-weight: 700;
+}
+.woloxName {
+  color: #96d001;
+}
