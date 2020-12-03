@@ -12,6 +12,4 @@ const techType = shape({
   logo: string,
 });
 
-export {
-  techType
-}
+export default techType;

@@ -4,13 +4,13 @@ const setStateToStorage = data => localStorage.setItem(GLOBAL_STATE, JSON.string
 
 const getInitialUserState = () => {
   const userState = localStorage.getItem(GLOBAL_STATE);
-  let initialState = {
+  const initialState = {
     user: null,
     isAuthenticated: false,
   };
 
   if (userState) {
-    initialState.user = JSON.parse(userState)
+    initialState.user = JSON.parse(userState);
     initialState.isAuthenticated = true;
   }
 
@@ -26,7 +26,7 @@ const getInitialSystemState = () => {
     listTech: [],
     listTechFiltered: [],
     favorites: [],
-  }
+  };
 
   if (favorites) {
     initialState.favorites = JSON.parse(favorites);
@@ -35,4 +35,4 @@ const getInitialSystemState = () => {
   return initialState;
 };
 
-export { setStateToStorage, getInitialUserState, getInitialSystemState }
+export { setStateToStorage, getInitialUserState, getInitialSystemState };

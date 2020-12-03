@@ -39,7 +39,7 @@ function validateInput(name, value) {
 }
 
 function isFormValid(inputs) {
-  let validations = [];
+  const validations = [];
 
   Object.keys(inputs).forEach(key => {
     validations.push(inputs[key].isValid);
@@ -54,4 +54,4 @@ function isFormValid(inputs) {
   return true;
 }
 
-export { validateInput, isFormValid }
+export { validateInput, isFormValid };

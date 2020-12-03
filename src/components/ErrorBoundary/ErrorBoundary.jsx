@@ -1,4 +1,6 @@
-import { Component } from 'react';
+/* eslint-disable react/forbid-prop-types */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -6,7 +8,7 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(erro) {
+  static getDerivedStateFromError(error) {
     return { hasError: true };
   }
 
@@ -21,5 +23,9 @@ class ErrorBoundary extends Component {
     return children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.object.isRequired,
+};
 
 export default ErrorBoundary;

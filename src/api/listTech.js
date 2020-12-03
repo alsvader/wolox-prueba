@@ -6,8 +6,8 @@ async function getListTech() {
   if (IS_MOCKED_SERVER) return new Promise(resolve => resolve(listTechMock));
 
   return httpUtils.call(`${WOLOX_BASE_EP}/techs`, {
-    method: 'get'
+    method: 'get',
   });
 }
 
-export { getListTech }
+export default getListTech;

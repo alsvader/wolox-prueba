@@ -9,7 +9,7 @@ const sortByNameAsc = (a, b) => {
   if (x > y) return 1;
 
   return 0;
-}
+};
 
 const sortByNameDesc = (a, b) => {
   const x = a.tech.toLowerCase();
@@ -20,7 +20,7 @@ const sortByNameDesc = (a, b) => {
   if (x > y) return -1;
 
   return 0;
-}
+};
 
 const getSortFunc = (type) => {
   switch (type) {
@@ -29,16 +29,14 @@ const getSortFunc = (type) => {
     case TYPES_SORT.SORT_DESC:
       return sortByNameDesc;
     default:
-      break;
+      return undefined;
   }
-}
+};
 
-const filterByName = (list, payload) => {
-  return list.filter(
-    x => x.tech.toLowerCase()
-      .includes(payload.toLowerCase())
-  );
-}
+const filterByName = (list, payload) => list.filter(
+  x => x.tech.toLowerCase()
+    .includes(payload.toLowerCase()),
+);
 
 const filterByType = (list, types) => {
   if (types.length === 0) {
@@ -53,12 +51,13 @@ const filterByType = (list, types) => {
   });
 
   return finalList;
-}
+};
 
 const filterSearch = (listTech, filtersData) => {
   const listToFilter = [...listTech];
 
-  let { types, term, orderBy } = filtersData;
+  const { term, orderBy } = filtersData;
+  let { types } = filtersData;
   types = types.filter(x => x.value);
 
   let finalList = [];

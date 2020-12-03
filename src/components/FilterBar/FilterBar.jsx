@@ -1,18 +1,33 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { DEFAULT_SELECT } from '../../config/constants';
 import systemActions from '../../redux/system/systemActions';
 
-const FilterBar = ({ dispatch, listTechFiltered }) => {
+const FilterBar = ({ dispatch }) => {
   const [filters, setFilters] = useState({
     term: '',
     backend: false,
     frontend: false,
     mobile: false,
     orderBy: DEFAULT_SELECT,
-  })
+  });
+
   const { t } = useTranslation();
+
+  const initSearch = (state) => {
+    const data = {
+      types: [
+        { type: 'back-end', value: state.backend },
+        { type: 'front-end', value: state.frontend },
+        { type: 'mobile', value: state.mobile },
+      ],
+      term: state.term,
+      orderBy: state.orderBy,
+    };
+    dispatch(systemActions.initFilter(data));
+  };
 
   const handleOnchange = e => {
     const { name, value } = e.target;
@@ -32,19 +47,6 @@ const FilterBar = ({ dispatch, listTechFiltered }) => {
     initSearch(stateUpdated);
 
     setFilters({ ...filters, [name]: checked });
-  }
-
-  const initSearch = (state) => {
-    const data = {
-      types: [
-        { type: 'back-end', value: state.backend },
-        { type: 'front-end', value: state.frontend },
-        { type: 'mobile', value: state.mobile },
-      ],
-      term: state.term,
-      orderBy: state.orderBy,
-    };
-    dispatch(systemActions.initFilter(data));
   };
 
   const {
@@ -100,13 +102,13 @@ const FilterBar = ({ dispatch, listTechFiltered }) => {
         <option value="desc">{t('nameDesc')}</option>
       </select>
     </div>
-  )
-}
+  );
+};
 
-const mapStateToProps = ({
-  system: { listTechFiltered }
-}) => ({
-  listTechFiltered,
-});
+FilterBar.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
 
-export default connect(mapStateToProps)(FilterBar);
+const mapDispatchToProps = ({ dispatch }) => ({ dispatch });
+
+export default connect(null, mapDispatchToProps)(FilterBar);

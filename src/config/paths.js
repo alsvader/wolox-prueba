@@ -5,5 +5,4 @@ const PATHS = {
   LIST_TECHNOLIGIES: '/technologies',
 };
 
-
 export default PATHS;

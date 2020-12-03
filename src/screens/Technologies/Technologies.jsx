@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { techType } from '../../utils/typesModel';
+import techType from '../../utils/typesModel';
 import getTech from '../../redux/middlewares/listTechMiddleware';
 import systemActions from '../../redux/system/systemActions';
 import FilterBar from '../../components/FilterBar/FilterBar';
@@ -19,7 +19,6 @@ const Technologies = ({
   }, [dispatch]);
 
   const setFavorite = (tech, isAdded) => {
-    console.log(isAdded);
     if (isAdded) {
       dispatch(systemActions.deleteFavorite(tech.toLowerCase()));
       return;
@@ -32,23 +31,28 @@ const Technologies = ({
     <div>
       <FilterBar />
 
+      {isLoading && <p>loading...</p>}
+
+      {errorMessage && <p>{errorMessage}</p>}
+
       <ListContext.Provider value={setFavorite}>
         <ListItems items={listTechFiltered} />
       </ListContext.Provider>
 
       <p>{listTechFiltered.length}</p>
     </div>
-  )
-}
+  );
+};
 
 Technologies.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   errorMessage: PropTypes.string.isRequired,
   listTechFiltered: PropTypes.arrayOf(techType).isRequired,
 };
 
 const mapStateToProps = ({
-  system: { isLoading, errorMessage, listTechFiltered }
+  system: { isLoading, errorMessage, listTechFiltered },
 }) => ({
   isLoading,
   errorMessage,

@@ -5,7 +5,7 @@ import { getInitialSystemState } from '../../utils/systemUtils';
 
 const initialState = getInitialSystemState();
 
-const reducer = (state = initialState, { type, payload }) => {
+const reducer = (state = initialState, { type, payload }) => { // NOSONAR
   switch (type) {
     case TYPES.SET_LOADING:
       return { ...state, isLoading: payload, errorMessage: '' };
@@ -14,14 +14,12 @@ const reducer = (state = initialState, { type, payload }) => {
     case TYPES.SET_LIST_TECH:
       return { ...state, listTech: payload, listTechFiltered: payload };
     case TYPES.INIT_FILTER: {
-
       const { listTech } = state;
       const finalList = filterSearch(listTech, payload);
 
       return { ...state, listTechFiltered: finalList };
     }
     case TYPES.ADD_FAVORITE: {
-
       const { favorites } = state;
       const favs = [...favorites];
       favs.push(payload);
@@ -30,7 +28,6 @@ const reducer = (state = initialState, { type, payload }) => {
       return { ...state, favorites: favs };
     }
     case TYPES.DELETE_FAVORITE: {
-
       const { favorites } = state;
       const favs = favorites.filter(x => x !== payload);
       localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));

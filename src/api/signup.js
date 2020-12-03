@@ -11,4 +11,4 @@ async function signup(body) {
   });
 }
 
-export { signup }
+export default signup;

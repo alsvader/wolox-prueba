@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+/* eslint-disable react/jsx-filename-extension */
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -12,7 +13,7 @@ ReactDOM.render(
       <App />
     </Suspense>
   </ErrorBoundary>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

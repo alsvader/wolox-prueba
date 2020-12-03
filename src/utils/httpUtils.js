@@ -11,7 +11,7 @@ const call = async (url, request) => {
       throw new Error(message);
     });
 
-  return await response.json();
+  return response.json();
 };
 
 const httpUtils = { call };

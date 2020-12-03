@@ -10,10 +10,12 @@ const ChangeLng = () => {
   return (
     <div>
       <select name="languages" onChange={changeLanguage}>
-        {AVAILABLE_LNG.map((lng, key) => <option key={key} value={lng.value}>{t(lng.value)}</option>)}
+        {AVAILABLE_LNG.map(
+          (lng, key) => <option key={key} value={lng.value}>{t(lng.value)}</option>,
+        )}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default ChangeLng
+export default ChangeLng;

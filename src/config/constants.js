@@ -6,7 +6,7 @@ const LANGUAGES_KEY = {
 const AVAILABLE_LNG = [
   { label: 'spanish_lng', value: LANGUAGES_KEY.ES },
   { label: 'english_lng', value: LANGUAGES_KEY.EN },
-]
+];
 
 const DEFAULT_SELECT = 'DEFAULT';
 

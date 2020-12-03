@@ -13,7 +13,7 @@ const mapDataToSignup = ({
   province: provinceSelected.value,
   mail: inputEmail.value,
   phone: phoneNumber.value,
-  password: password.value
+  password: password.value,
 });
 
-export { mapDataToSignup }
+export default mapDataToSignup;
