@@ -3,7 +3,6 @@ import { techType } from '../../utils/typesModel';
 import Item from '../Item/Item';
 
 const ListItems = ({ items }) => {
-  console.log('list items component');
   return (
     <div>
       {items.map((item, key) => <Item key={key} item={item} />)}

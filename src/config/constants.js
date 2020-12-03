@@ -18,6 +18,8 @@ const PASSWORD_FORMAT = /^[A-Z0-9]{6,}$/i;
 
 const GLOBAL_STATE = 'GLOBAL_STATE';
 
+const FAVORITES_KEY = 'FAVORITES';
+
 const TYPES_SORT = {
   SORT_ASC: 'asc',
   SORT_DESC: 'desc',
@@ -32,4 +34,5 @@ export {
   PASSWORD_FORMAT,
   GLOBAL_STATE,
   TYPES_SORT,
+  FAVORITES_KEY,
 };

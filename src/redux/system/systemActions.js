@@ -17,6 +17,14 @@ const ACTIONS = {
     type: TYPES.INIT_FILTER,
     payload: filters,
   }),
+  addFavorite: favorite => ({
+    type: TYPES.ADD_FAVORITE,
+    payload: favorite,
+  }),
+  deleteFavorite: favorite => ({
+    type: TYPES.DELETE_FAVORITE,
+    payload: favorite,
+  }),
 };
 
 export default ACTIONS

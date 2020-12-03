@@ -1,4 +1,4 @@
-import { GLOBAL_STATE } from '../config/constants';
+import { GLOBAL_STATE, FAVORITES_KEY } from '../config/constants';
 
 const setStateToStorage = data => localStorage.setItem(GLOBAL_STATE, JSON.stringify(data));
 
@@ -17,4 +17,22 @@ const getInitialUserState = () => {
   return initialState;
 };
 
-export { setStateToStorage, getInitialUserState }
+const getInitialSystemState = () => {
+  const favorites = localStorage.getItem(FAVORITES_KEY);
+
+  const initialState = {
+    isLoading: false,
+    errorMessage: '',
+    listTech: [],
+    listTechFiltered: [],
+    favorites: [],
+  }
+
+  if (favorites) {
+    initialState.favorites = JSON.parse(favorites);
+  }
+
+  return initialState;
+};
+
+export { setStateToStorage, getInitialUserState, getInitialSystemState }
