@@ -28,5 +28,6 @@
   "home": "Home",
   "benefits": "Benefits",
   "signup_btn": "Signup",
-  "technologies": "Technologies"
+  "technologies": "Technologies",
+  "logout": "Log out"
 }

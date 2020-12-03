@@ -5,6 +5,9 @@ const ACTIONS = {
     type: TYPES.SET_USER,
     payload: user,
   }),
+  logout: () => ({
+    type: TYPES.LOGOUT,
+  }),
 };
 
 export default ACTIONS;
