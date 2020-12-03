@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { techType } from '../../utils/typesModel';
 import getTech from '../../redux/middlewares/listTechMiddleware';
 import FilterBar from '../../components/FilterBar/FilterBar';
+import ListItems from '../../components/ListItems/ListItems';
 
 const Technologies = ({
   dispatch,
@@ -17,15 +20,18 @@ const Technologies = ({
     <div>
       <FilterBar />
 
-      {listTechFiltered.map((item, key) => {
-        return <div key={key}>
-          <h1>{item.tech}</h1>
-          <img src={item.logo} alt={item.tech} />
-        </div>
-      })}
+      <ListItems items={listTechFiltered} />
+
+      <p>{listTechFiltered.length}</p>
     </div>
   )
 }
+
+Technologies.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string.isRequired,
+  listTechFiltered: PropTypes.arrayOf(techType).isRequired,
+};
 
 const mapStateToProps = ({
   system: { isLoading, errorMessage, listTechFiltered }
