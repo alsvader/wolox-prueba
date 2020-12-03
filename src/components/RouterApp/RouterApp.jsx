@@ -4,14 +4,16 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotFound from '../../screens/NotFound/NotFound';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import PublicHeader from '../PublicHeader/PublicHeader';
-import PrivateHeader from '../PrivateHeader/PrivateHeader';
+// import PublicHeader from '../PublicHeader/PublicHeader';
+// import PrivateHeader from '../PrivateHeader/PrivateHeader';
+import Header from '../Header/Header';
 import routes from '../../config/routes';
 
 const RouterApp = ({ isAuthenticated }) => (
-  <>
-    {isAuthenticated ? <PrivateHeader /> : <PublicHeader />}
+  <main className="container">
+    {/* {isAuthenticated ? <PrivateHeader /> : <PublicHeader />} */}
     <Router>
+      <Header />
       <Switch>
         {routes.map((route, key) => {
           const {
@@ -37,7 +39,7 @@ const RouterApp = ({ isAuthenticated }) => (
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
-  </>
+  </main>
 );
 
 const mapStateToProps = ({
