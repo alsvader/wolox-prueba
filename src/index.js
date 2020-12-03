@@ -2,13 +2,16 @@ import React, { Suspense } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import reportWebVitals from './reportWebVitals';
 import './config/i18n';
 
 ReactDOM.render(
-  <Suspense fallback={<div>loading...</div>}>
-    <App />
-  </Suspense>,
+  <ErrorBoundary>
+    <Suspense fallback={<div>loading...</div>}>
+      <App />
+    </Suspense>
+  </ErrorBoundary>,
   document.getElementById('root')
 );
 
