@@ -35,8 +35,7 @@ const getSortFunc = (type) => {
 
 const filterByName = (list, payload) => {
   return list.filter(
-    x => x.tech.
-      toLowerCase()
+    x => x.tech.toLowerCase()
       .includes(payload.toLowerCase())
   );
 }
