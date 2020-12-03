@@ -1,8 +1,10 @@
+import { lazy } from 'react';
 import PATHS from './paths';
-import Home from '../screens/Home/Home';
-import Signup from '../screens/Signup/Signup';
-import Terms from '../screens/Terms/Terms';
-import Technologies from '../screens/Technologies/Technologies';
+
+const Home = lazy(() => import('../screens/Home/Home'));
+const Signup = lazy(() => import('../screens/Signup/Signup'));
+const Terms = lazy(() => import('../screens/Terms/Terms'));
+const Technologies = lazy(() => import('../screens/Technologies/Technologies'));
 
 const ROUTES = [
   // PUBLIC ROUTES

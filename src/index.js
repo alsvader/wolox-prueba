@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import './config/i18n';
 
 ReactDOM.render(
-  <Suspense fallback={null}>
+  <Suspense fallback={<div>loading...</div>}>
     <App />
   </Suspense>,
   document.getElementById('root')
