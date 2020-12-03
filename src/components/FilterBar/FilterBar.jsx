@@ -109,6 +109,4 @@ FilterBar.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = ({ dispatch }) => ({ dispatch });
-
-export default connect(null, mapDispatchToProps)(FilterBar);
+export default connect()(FilterBar);
