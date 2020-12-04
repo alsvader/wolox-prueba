@@ -108,3 +108,12 @@ ul li a {
 .totalFavs {
   margin-left: 1%;
 }
+
+@media screen and (min-width: 576px) {
+  ul {
+    margin-top: 5%;
+  }
+  ul li {
+    font-size: 26px;
+  }
+}
