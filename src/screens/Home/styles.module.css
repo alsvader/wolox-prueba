@@ -51,4 +51,31 @@
 }
 .goal {
   background-color: #f2f5fa;
+  padding: 10% 0;
+  text-align: center;
+}
+.goal p {
+  color: #101429;
+  font-weight: 700;
+  margin: 0 0 4%;
+}
+.benefits {
+  text-align: center;
+}
+.benefits h2 {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0 0 10%;
+}
+.benefitBox {
+  width: 100%;
+}
+.benefitBox img {
+  margin-bottom: 5%;
+  width: 30%;
+}
+.benefitBox p {
+  line-height: 35px;
+  margin: 0 0 2% 26.5%;
+  width: 47%;
 }

@@ -34,6 +34,7 @@
   "technicalInterview": "Entrevista Técnica",
   "at": "en",
   "in": "en",
+  "into": "en",
   "wolox": "Wolox",
   "countWoloxer": "350 + ",
   "woloxer": "Woloxers",
@@ -41,5 +42,12 @@
   "followUs": "Síguenos",
   "workFor": "Trabajamos para",
   "turn": "convertir ",
-  "ideas": "ideas "
+  "ideas": "ideas ",
+  "products": "productos.",
+  "flexibleSchedule": "Flexibilidad Horaria",
+  "homeOffice": "Home Office",
+  "trainings": "Trainings and Workshops",
+  "snackFruit": "Snacks, frutas y bebidas gratis",
+  "weekRemote": "Semana Remota",
+  "edgeTech": "Trabajar en últimas tecnologías"
 }
