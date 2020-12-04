@@ -1,17 +1,17 @@
-.welcomeBox {
-  margin-left: 2.5%;
-  width: 95%;
+.boxContainer {
+  position: relative;
+  width: 100%;
 }
-.welcomeBox div {
+.boxContainer div {
   margin-bottom: 16%;
   width: 100%;
 }
-.welcomeBox p {
+.boxContainer p {
   font-size: 24px;
   margin: 20px 0;
   text-align: center;
 }
-.welcomeBox img {
+.boxContainer img {
   width: 100%;
 }
 .boldText {
@@ -19,4 +19,33 @@
 }
 .woloxName {
   color: #96d001;
+}
+.woloxer {
+  height: 200px;
+}
+.countWoloxer {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+.countWoloxer p {
+  font-weight: 700;
+}
+.greenColor {
+  color: #96d001;
+}
+.blueColor {
+  color: #2aa7df;
+}
+.whiteColor {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 12px;
+}
+.btnFollowUs {
+  background: linear-gradient(to bottom, transparent 5%, transparent 100%);
+  color: #ffffff;
+  margin-left: 25%;
+  width: 50%;
 }
