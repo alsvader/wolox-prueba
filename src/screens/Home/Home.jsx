@@ -21,7 +21,7 @@ const Home = () => {
           <p>
             <span className={styles.boldText}>{t('technicalInterview')}</span>
             {' '}
-            {t('in')}
+            {t('at')}
           </p>
           <p className={[styles.woloxName, styles.boldText].join(' ')}>{t('wolox')}</p>
         </div>
@@ -55,6 +55,14 @@ const Home = () => {
           >
             {t('followUs')}
           </button>
+        </div>
+        <div className={styles.goal}>
+          <p>{t('workFor')}</p>
+          <p>
+            <span>{t('turn')}</span>
+            <span>{t('ideas')}</span>
+            <span>{t('in')}</span>
+          </p>
         </div>
       </div>
     </>

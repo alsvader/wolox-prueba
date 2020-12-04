@@ -32,10 +32,14 @@
   "logout": "Salir",
   "welcomeTo": "Bienvenido a tu",
   "technicalInterview": "Entrevista Técnica",
+  "at": "en",
   "in": "en",
   "wolox": "Wolox",
   "countWoloxer": "350 + ",
   "woloxer": "Woloxers",
   "atWolox": "@Wolox",
-  "followUs": "Síguenos"
+  "followUs": "Síguenos",
+  "workFor": "Trabajamos para",
+  "turn": "convertir ",
+  "ideas": "ideas "
 }
