@@ -122,3 +122,25 @@
     line-height: 54px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .boxContainer div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+  }
+  .woloxer {
+    height: 322px;
+    vertical-align: top;
+    width: 50% !important;
+  }
+  .countWoloxer {
+    left: 0;
+  }
+  .countWoloxer {
+    top: 12%;
+  }
+  .benefitBox img {
+    width: 30%;
+  }
+}
