@@ -79,3 +79,19 @@
   margin: 0 0 2% 26.5%;
   width: 47%;
 }
+.footer {
+  padding: 5% 0 30%;
+  /* padding-bottom:; */
+  text-align: center;
+}
+.footer h2 {
+  line-height: 42px;
+}
+.footer p {
+  font-size: 21px;
+  margin: 0 0 8%;
+}
+.btnLearnMore {
+  background: linear-gradient(to bottom, #2aa7df 5%, #2aa7df 100%);
+  color: #ffffff;
+}

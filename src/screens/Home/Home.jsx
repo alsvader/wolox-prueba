@@ -117,6 +117,19 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <div className={[styles.boxContainer, 'backgroundImage', styles.footer].join(' ')}>
+        <h2>
+          {t('thanksFor')}
+          <span className={styles.blueColor}>{t('completeExercise')}</span>
+        </h2>
+        <p>{t('invitation')}</p>
+        <button
+          type="button"
+          className={['primaryButton', styles.btnLearnMore].join(' ')}
+        >
+          {t('learnMore')}
+        </button>
+      </div>
     </>
   );
 };
