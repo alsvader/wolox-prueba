@@ -198,4 +198,15 @@
     text-align: center;
     margin: 0 0 3%;
   }
+  .countWoloxer {
+    width: 50% !important;
+  }
+  .countWoloxer p {
+    margin: 0 !important;
+    text-align: center;
+    width: 100%;
+  }
+  .btnFollowUs {
+    margin-top: 5%;
+  }
 }
