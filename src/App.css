@@ -138,3 +138,36 @@ ul li a {
     padding: 18px 15px;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .header {
+    padding-top: 0%;
+  }
+  .img,
+  ul {
+    display: inline-block;
+  }
+  .img {
+    margin-left: 6%;
+    width: 20%;
+  }
+  ul {
+    margin-top: 0;
+    text-align: center;
+    padding-bottom: 0;
+    width: 74%;
+  }
+  ul li {
+    width: 15%;
+  }
+  .lngComponent {
+    width: 6%;
+  }
+  .select select {
+    font-size: 26px;
+    padding: 11px 15px;
+  }
+  .select_arrow {
+    top: 25px;
+  }
+}

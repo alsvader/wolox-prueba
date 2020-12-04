@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <>
       <div className={[styles.boxContainer, 'backgroundImage'].join(' ')}>
-        <div>
+        <div className="sectWelcome">
           <p>{t('welcomeTo')}</p>
           <p>
             <span className={styles.boldText}>{t('technicalInterview')}</span>
@@ -107,8 +107,8 @@ const Home = () => {
       </div>
       <div className={[styles.boxContainer, styles.benefits].join(' ')}>
         <h2>
-          Entre los beneficios que ofrecemos se encuentran
-          <span className={styles.blueColor}> ;)</span>
+          {t('benefitsTitle')}
+          <span className={styles.blueColor}>;)</span>
         </h2>
         {benefits.map((item, key) => (
           <div key={key} className={styles.benefitBox}>

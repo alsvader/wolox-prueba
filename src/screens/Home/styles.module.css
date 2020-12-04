@@ -147,3 +147,55 @@
     padding-bottom: 15%;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .boxContainer img {
+    width: 60%;
+  }
+  .boxContainer p {
+    font-size: 48px;
+    margin-left: 14%;
+    text-align: left;
+  }
+  .boxContainer div {
+    vertical-align: top;
+    margin-bottom: 0;
+  }
+  .woloxer {
+    height: auto;
+  }
+  .goal {
+    padding: 6.4% 0;
+  }
+  .benefits h2 {
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+  .benefitBox {
+    width: 15% !important;
+  }
+  .benefitBox h2 {
+    font-size: 40px !important;
+  }
+  .benefitBox img {
+    width: 35%;
+  }
+  .benefitBox p {
+    font-size: 27px;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+  }
+  .footer {
+    padding-top: 8%;
+    padding-bottom: 7%;
+  }
+  .footer h2 {
+    font-size: 50px;
+  }
+  .footer p {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 0 3%;
+  }
+}
