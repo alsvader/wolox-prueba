@@ -119,7 +119,22 @@ ul li a {
 }
 
 @media screen and (min-width: 768px) {
+  ul {
+    width: 100%;
+  }
+  ul li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+  }
+  .lngComponent {
+    vertical-align: top;
+    width: 20%;
+  }
   .select {
-    width: 43%;
+    width: 100%;
+  }
+  .select select {
+    padding: 18px 15px;
   }
 }

@@ -143,4 +143,7 @@
   .benefitBox img {
     width: 30%;
   }
+  .footer {
+    padding-bottom: 15%;
+  }
 }
