@@ -16,14 +16,23 @@
   margin-top: 1%;
   text-align: center;
 }
+.row {
+  width: 100%;
+}
+.halfInput,
+.fullInput {
+  margin-left: 6%;
+  margin-bottom: 5%;
+  width: 80%;
+}
 .input {
   background: #f2f2f2;
   border: none !important;
   display: inline-block;
-  margin-left: 6%;
-  margin-bottom: 5%;
-  padding: 4%;
-  width: 80%;
+  /* margin-left: 6%;
+  margin-bottom: 5%; */
+  padding: 5%;
+  width: 100%;
 }
 .labelCheckbox {
   display: block;
@@ -112,4 +121,19 @@
   margin-left: 7%;
   line-height: 21px;
   margin-bottom: 5%;
+}
+
+@media screen and (min-width: 768px) {
+  .halfInput {
+    display: inline-block;
+    margin-left: 6%;
+    width: 37.5%;
+  }
+  .halfInput input {
+    padding: 10%;
+    width: 90%;
+  }
+  .halfInput:nth-child(even) {
+    margin-left: 9%;
+  }
 }

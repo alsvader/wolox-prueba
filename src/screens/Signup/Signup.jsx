@@ -159,28 +159,34 @@ const Signup = ({
           <span>{errorMessage}</span>
         )}
         <form onSubmit={handleFormSubmit}>
-          <input
-            className={styles.input}
-            name="inputName"
-            type="text"
-            maxLength="30"
-            placeholder={t('name')}
-            value={inputName.value}
-            onChange={handleInputChange}
-            required
-          />
+
+          <div className={styles.halfInput}>
+            <input
+              className={styles.input}
+              name="inputName"
+              type="text"
+              maxLength="30"
+              placeholder={t('name')}
+              value={inputName.value}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+
+          <div className={styles.halfInput}>
+            <input
+              className={styles.input}
+              name="inputLastname"
+              type="text"
+              maxLength="30"
+              placeholder={t('lastname')}
+              value={inputLastname.value}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
           {inputName.errMessage && <span className={styles.error}>{t(inputName.errMessage)}</span>}
 
-          <input
-            className={styles.input}
-            name="inputLastname"
-            type="text"
-            maxLength="30"
-            placeholder={t('lastname')}
-            value={inputLastname.value}
-            onChange={handleInputChange}
-            required
-          />
           {inputLastname.errMessage
             && <span className={styles.error}>{t(inputLastname.errMessage)}</span>}
 
@@ -216,46 +222,54 @@ const Signup = ({
           {provinceSelected.errMessage
             && <span className={styles.error}>{t(provinceSelected.errMessage)}</span>}
 
-          <input
-            className={styles.input}
-            name="inputEmail"
-            type="email"
-            placeholder={t('email')}
-            onChange={handleInputChange}
-            required
-          />
+          <div className={styles.halfInput}>
+            <input
+              className={styles.input}
+              name="inputEmail"
+              type="email"
+              placeholder={t('email')}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
           {inputEmail.errMessage
             && <span className={styles.error}>{t(inputEmail.errMessage)}</span>}
 
-          <input
-            className={styles.input}
-            name="phoneNumber"
-            type="tel"
-            placeholder={t('phoneNumber')}
-            onChange={handleInputChange}
-            required
-          />
+          <div className={styles.halfInput}>
+            <input
+              className={styles.input}
+              name="phoneNumber"
+              type="tel"
+              placeholder={t('phoneNumber')}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
           {phoneNumber.errMessage
             && <span className={styles.error}>{t(phoneNumber.errMessage)}</span>}
 
-          <input
-            className={styles.input}
-            name="password"
-            type="password"
-            placeholder={t('password')}
-            onChange={handleInputChange}
-            required
-          />
+          <div className={styles.fullInput}>
+            <input
+              className={styles.input}
+              name="password"
+              type="password"
+              placeholder={t('password')}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
           {password.errMessage && <span className={styles.error}>{t(password.errMessage)}</span>}
 
-          <input
-            className={styles.input}
-            name="repeatedPassword"
-            type="password"
-            placeholder={t('repeatPassword')}
-            onChange={handleRepeatedPasswd}
-            required
-          />
+          <div className={styles.fullInput}>
+            <input
+              className={styles.input}
+              name="repeatedPassword"
+              type="password"
+              placeholder={t('repeatPassword')}
+              onChange={handleRepeatedPasswd}
+              required
+            />
+          </div>
           {repeatedPassword.errMessage
             && <span className={styles.error}>{t(repeatedPassword.errMessage)}</span>}
 
