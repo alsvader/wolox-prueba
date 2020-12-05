@@ -11,6 +11,8 @@ import countries from '../../api/__mock__/countries.json';
 
 import signup from '../../redux/middlewares/signupMiddleware';
 
+import styles from './styles.module.css';
+
 const initialState = {
   value: '',
   errMessage: '',
@@ -151,112 +153,132 @@ const Signup = ({
 
   return (
     <>
-      <div>
+      <div className={styles.formContainer}>
+        <h1>{t('signupTitle')}</h1>
         {errorMessage && (
           <span>{errorMessage}</span>
         )}
         <form onSubmit={handleFormSubmit}>
-          <label htmlFor="inputName">{t('name')}</label>
           <input
+            className={styles.input}
             name="inputName"
             type="text"
             maxLength="30"
+            placeholder={t('name')}
             value={inputName.value}
             onChange={handleInputChange}
             required
           />
           {inputName.errMessage && <span>{t(inputName.errMessage)}</span>}
 
-          <label htmlFor="inputLastname">{t('lastname')}</label>
           <input
+            className={styles.input}
             name="inputLastname"
             type="text"
             maxLength="30"
+            placeholder={t('lastname')}
             value={inputLastname.value}
             onChange={handleInputChange}
             required
           />
           {inputLastname.errMessage && <span>{t(inputLastname.errMessage)}</span>}
 
-          <label htmlFor="country">{t('country')}</label>
-          <select
-            name="country"
-            defaultValue={DEFAULT_SELECT}
-            onChange={handleCountryChange}
-            required
-          >
-            <option value={DEFAULT_SELECT}>{t('select_option')}</option>
-            {countries.map(
-              (item, key) => <option key={key} value={item.value}>{item.label}</option>,
-            )}
-          </select>
-          {countrySelected.errMessage && <span>{t(countrySelected.errMessage)}</span>}
+          <div className={styles.select}>
+            <select
+              name="country"
+              defaultValue={DEFAULT_SELECT}
+              onChange={handleCountryChange}
+              required
+            >
+              <option value={DEFAULT_SELECT}>{t('select_option')}</option>
+              {countries.map(
+                (item, key) => <option key={key} value={item.value}>{item.label}</option>,
+              )}
+            </select>
+            {countrySelected.errMessage && <span>{t(countrySelected.errMessage)}</span>}
+          </div>
 
-          <label htmlFor="province">{t('province')}</label>
-          <select
-            name="province"
-            defaultValue={DEFAULT_SELECT}
-            onChange={handleProvinceChange}
-            required
-          >
-            <option value={DEFAULT_SELECT}>{t('select_option')}</option>
-            {listProvinces.map(
-              (item, key) => <option key={key} value={item.value}>{item.label}</option>,
-            )}
-          </select>
-          {provinceSelected.errMessage && <span>{t(provinceSelected.errMessage)}</span>}
+          <div className={styles.select}>
+            <select
+              name="province"
+              defaultValue={DEFAULT_SELECT}
+              onChange={handleProvinceChange}
+              required
+            >
+              <option value={DEFAULT_SELECT}>{t('select_option')}</option>
+              {listProvinces.map(
+                (item, key) => <option key={key} value={item.value}>{item.label}</option>,
+              )}
+            </select>
+            {provinceSelected.errMessage && <span>{t(provinceSelected.errMessage)}</span>}
+          </div>
 
-          <label htmlFor="inputEmail">{t('email')}</label>
           <input
+            className={styles.input}
             name="inputEmail"
             type="email"
+            placeholder={t('email')}
             onChange={handleInputChange}
             required
           />
           {inputEmail.errMessage && <span>{t(inputEmail.errMessage)}</span>}
 
-          <label htmlFor="phoneNumber">{t('phoneNumber')}</label>
           <input
+            className={styles.input}
             name="phoneNumber"
             type="tel"
+            placeholder={t('phoneNumber')}
             onChange={handleInputChange}
             required
           />
           {phoneNumber.errMessage && <span>{t(phoneNumber.errMessage)}</span>}
 
-          <label htmlFor="password">{t('password')}</label>
           <input
+            className={styles.input}
             name="password"
             type="password"
+            placeholder={t('password')}
             onChange={handleInputChange}
             required
           />
           {password.errMessage && <span>{t(password.errMessage)}</span>}
 
-          <label htmlFor="repeatedPassword">{t('repeatPassword')}</label>
           <input
+            className={styles.input}
             name="repeatedPassword"
             type="password"
+            placeholder={t('repeatPassword')}
             onChange={handleRepeatedPasswd}
             required
           />
           {repeatedPassword.errMessage && <span>{t(repeatedPassword.errMessage)}</span>}
 
-          <input
-            type="checkbox"
-            name="checkBoxTerms"
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="checkBoxTerms">
+          <label className={styles.labelCheckbox} htmlFor="checkBoxTerms">
+            <input
+              className={styles.checkbox}
+              type="checkbox"
+              name="checkBoxTerms"
+              onChange={handleCheckboxChange}
+            />
             <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
           </label>
 
           {checkBoxTerms.errMessage && <span>{t(checkBoxTerms.errMessage)}</span>}
 
-          <button type="submit" disabled={!isBtnDisabled}>{t('submit')}</button>
+          <button
+            className={[
+              styles.btn,
+              styles.info,
+              styles.btnSignup,
+            ].join(' ')}
+            type="submit"
+            disabled={!isBtnDisabled}
+          >
+            {t('submit')}
+          </button>
         </form>
       </div>
-      {isLoading && <p>loading...</p>}
+      { isLoading && <p>loading...</p>}
     </>
   );
 };

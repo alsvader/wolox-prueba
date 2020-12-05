@@ -109,6 +109,11 @@ ul li a {
   margin-left: 1%;
 }
 
+.btnLearnMore {
+  background: linear-gradient(to bottom, #2aa7df 5%, #2aa7df 100%);
+  color: #ffffff;
+}
+
 @media screen and (min-width: 576px) {
   ul {
     margin-top: 5%;

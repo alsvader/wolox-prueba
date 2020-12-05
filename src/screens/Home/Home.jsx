@@ -125,7 +125,7 @@ const Home = () => {
         <p>{t('invitation')}</p>
         <button
           type="button"
-          className={['primaryButton', styles.btnLearnMore].join(' ')}
+          className={['primaryButton', 'btnLearnMore'].join(' ')}
         >
           {t('learnMore')}
         </button>
