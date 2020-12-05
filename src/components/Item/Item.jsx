@@ -76,8 +76,8 @@ const Item = ({ favorites, item }) => {
           <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
           {item.type}
         </span>
-        <h1>{tech}</h1>
       </div>
+      <h1>{tech}</h1>
       <FontAwesomeIcon
         icon={isFavorite ? HeartBold : HeartRegular}
         color={isFavorite ? 'red' : 'inherit'}

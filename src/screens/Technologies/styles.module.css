@@ -7,6 +7,7 @@
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
   transition: 0.3s;
   margin-bottom: 10%;
   position: relative;
@@ -19,12 +20,16 @@
   margin-bottom: 10%;
   width: 100%;
 }
+.card h1 {
+  position: absolute;
+  bottom: 0;
+}
 .container {
   padding: 2px 16px;
 }
 .heartIcon {
   position: absolute;
-  bottom: 8%;
+  bottom: 4%;
   right: 5%;
 }
 .heartIcon:hover {
@@ -74,4 +79,45 @@
 }
 .icon {
   margin-right: 4px;
+}
+
+@media screen and (min-width: 576px) {
+  .listContainer {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .listContainer {
+    width: 95%;
+  }
+  .card {
+    height: 600px;
+    vertical-align: top;
+    margin-left: 3%;
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    height: 450px;
+    margin-left: 3%;
+    width: 30%;
+  }
+  .card img {
+    margin-left: 15%;
+    width: 70%;
+  }
+  .card:nth-child(even) {
+    margin-left: 3%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    margin-left: 5%;
+    margin-bottom: 4%;
+    height: 480px;
+    width: 20%;
+  }
 }
