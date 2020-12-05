@@ -8,6 +8,8 @@ import FilterBar from '../../components/FilterBar/FilterBar';
 import ListItems from '../../components/ListItems/ListItems';
 import ListContext from '../../providers';
 
+import styles from './styles.module.css';
+
 const Technologies = ({
   dispatch,
   isLoading,
@@ -28,7 +30,7 @@ const Technologies = ({
   };
 
   return (
-    <div>
+    <div className={styles.listContainer}>
       <FilterBar />
 
       {isLoading && <p>loading...</p>}

@@ -1,0 +1,77 @@
+.listContainer {
+  margin: 0 auto;
+  width: 90%;
+}
+.cardContainer {
+  width: 100%;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin-bottom: 10%;
+  position: relative;
+  width: 100%;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card img {
+  margin-bottom: 10%;
+  width: 100%;
+}
+.container {
+  padding: 2px 16px;
+}
+.heartIcon {
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+}
+.heartIcon:hover {
+  cursor: pointer;
+}
+.badge {
+  color: red;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  word-spacing: 4px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.badgePill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.badgePrimary {
+  color: #fff;
+  background-color: #007bff;
+}
+.badgeSuccess {
+  color: #fff;
+  background-color: #28a745;
+}
+.badgeDanger {
+  color: #fff;
+  background-color: #dc3545;
+}
+.badgeWarning {
+  color: #212529;
+  background-color: #ffc107;
+}
+.badgeInfo {
+  color: #fff;
+  background-color: #17a2b8;
+}
+.icon {
+  margin-right: 4px;
+}
