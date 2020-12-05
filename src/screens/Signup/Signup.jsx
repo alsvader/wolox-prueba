@@ -169,7 +169,7 @@ const Signup = ({
             onChange={handleInputChange}
             required
           />
-          {inputName.errMessage && <span>{t(inputName.errMessage)}</span>}
+          {inputName.errMessage && <span className={styles.error}>{t(inputName.errMessage)}</span>}
 
           <input
             className={styles.input}
@@ -181,7 +181,8 @@ const Signup = ({
             onChange={handleInputChange}
             required
           />
-          {inputLastname.errMessage && <span>{t(inputLastname.errMessage)}</span>}
+          {inputLastname.errMessage
+            && <span className={styles.error}>{t(inputLastname.errMessage)}</span>}
 
           <div className={styles.select}>
             <select
@@ -190,13 +191,14 @@ const Signup = ({
               onChange={handleCountryChange}
               required
             >
-              <option value={DEFAULT_SELECT}>{t('select_option')}</option>
+              <option value={DEFAULT_SELECT}>{t('select_country')}</option>
               {countries.map(
                 (item, key) => <option key={key} value={item.value}>{item.label}</option>,
               )}
             </select>
-            {countrySelected.errMessage && <span>{t(countrySelected.errMessage)}</span>}
           </div>
+          {countrySelected.errMessage
+            && <span className={styles.error}>{t(countrySelected.errMessage)}</span>}
 
           <div className={styles.select}>
             <select
@@ -205,13 +207,14 @@ const Signup = ({
               onChange={handleProvinceChange}
               required
             >
-              <option value={DEFAULT_SELECT}>{t('select_option')}</option>
+              <option value={DEFAULT_SELECT}>{t('select_province')}</option>
               {listProvinces.map(
                 (item, key) => <option key={key} value={item.value}>{item.label}</option>,
               )}
             </select>
-            {provinceSelected.errMessage && <span>{t(provinceSelected.errMessage)}</span>}
           </div>
+          {provinceSelected.errMessage
+            && <span className={styles.error}>{t(provinceSelected.errMessage)}</span>}
 
           <input
             className={styles.input}
@@ -221,7 +224,8 @@ const Signup = ({
             onChange={handleInputChange}
             required
           />
-          {inputEmail.errMessage && <span>{t(inputEmail.errMessage)}</span>}
+          {inputEmail.errMessage
+            && <span className={styles.error}>{t(inputEmail.errMessage)}</span>}
 
           <input
             className={styles.input}
@@ -231,7 +235,8 @@ const Signup = ({
             onChange={handleInputChange}
             required
           />
-          {phoneNumber.errMessage && <span>{t(phoneNumber.errMessage)}</span>}
+          {phoneNumber.errMessage
+            && <span className={styles.error}>{t(phoneNumber.errMessage)}</span>}
 
           <input
             className={styles.input}
@@ -241,7 +246,7 @@ const Signup = ({
             onChange={handleInputChange}
             required
           />
-          {password.errMessage && <span>{t(password.errMessage)}</span>}
+          {password.errMessage && <span className={styles.error}>{t(password.errMessage)}</span>}
 
           <input
             className={styles.input}
@@ -251,7 +256,8 @@ const Signup = ({
             onChange={handleRepeatedPasswd}
             required
           />
-          {repeatedPassword.errMessage && <span>{t(repeatedPassword.errMessage)}</span>}
+          {repeatedPassword.errMessage
+            && <span className={styles.error}>{t(repeatedPassword.errMessage)}</span>}
 
           <label className={styles.labelCheckbox} htmlFor="checkBoxTerms">
             <input
@@ -263,7 +269,8 @@ const Signup = ({
             <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
           </label>
 
-          {checkBoxTerms.errMessage && <span>{t(checkBoxTerms.errMessage)}</span>}
+          {checkBoxTerms.errMessage
+            && <span className={styles.error}>{t(checkBoxTerms.errMessage)}</span>}
 
           <button
             className={[

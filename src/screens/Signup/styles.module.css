@@ -28,6 +28,7 @@
 .labelCheckbox {
   display: block;
   margin-left: 6%;
+  margin-bottom: 5%;
   width: 90%;
 }
 .checkbox {
@@ -49,7 +50,7 @@
   background: #06709f;
 }
 .btnSignup {
-  margin-top: 10%;
+  /* margin-top: 10%; */
   margin-left: 24%;
   margin-bottom: 5%;
   width: 50%;
@@ -58,7 +59,7 @@
   position: relative;
   display: inline-block;
   margin-left: 6%;
-  margin-bottom: 15px;
+  margin-bottom: 5%;
   width: 88%;
 }
 .select select {
@@ -103,4 +104,12 @@
 }
 .select select:disabled ~ .select_arrow {
   border-top-color: #cccccc;
+}
+.error {
+  display: block;
+  color: red;
+  width: 86%;
+  margin-left: 7%;
+  line-height: 21px;
+  margin-bottom: 5%;
 }

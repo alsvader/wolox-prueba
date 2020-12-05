@@ -4,6 +4,8 @@
   "country": "País",
   "province": "Provincia",
   "select_option": "Seleccione una opción",
+  "select_country": "Seleccione un país",
+  "select_province": "Seleccione una provincia",
   "email": "Correo electrónico",
   "phoneNumber": "Número de teléfono",
   "password": "Contraseña",
