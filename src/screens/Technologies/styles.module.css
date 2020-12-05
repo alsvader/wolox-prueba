@@ -24,8 +24,8 @@
 }
 .heartIcon {
   position: absolute;
-  bottom: 8px;
-  right: 7px;
+  bottom: 8%;
+  right: 5%;
 }
 .heartIcon:hover {
   cursor: pointer;
