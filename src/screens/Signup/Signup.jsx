@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import PATHS from '../../config/paths';
 import { DEFAULT_SELECT } from '../../config/constants';
 import { validateInput, isFormValid } from '../../utils/inputValidation';
@@ -54,7 +56,7 @@ const Signup = ({
         ...state,
         countrySelected: {
           value: null,
-          errMessage: 'optionMustBeSelected',
+          errMessage: 'select_country',
           isValid: false,
         },
       });
@@ -83,7 +85,7 @@ const Signup = ({
         ...state,
         provinceSelected: {
           value: null,
-          errMessage: 'optionMustBeSelected',
+          errMessage: 'select_province',
           isValid: false,
         },
       });
@@ -161,6 +163,13 @@ const Signup = ({
         <form onSubmit={handleFormSubmit}>
 
           <div className={styles.halfInput}>
+            {inputName.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(inputName.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="inputName"
@@ -174,6 +183,13 @@ const Signup = ({
           </div>
 
           <div className={styles.halfInput}>
+            {inputLastname.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(inputLastname.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="inputLastname"
@@ -185,12 +201,16 @@ const Signup = ({
               required
             />
           </div>
-          {inputName.errMessage && <span className={styles.error}>{t(inputName.errMessage)}</span>}
-
-          {inputLastname.errMessage
-            && <span className={styles.error}>{t(inputLastname.errMessage)}</span>}
 
           <div className={styles.select}>
+            {countrySelected.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(countrySelected.errMessage)}
+                </span>
+              )}
+
             <select
               name="country"
               defaultValue={DEFAULT_SELECT}
@@ -203,10 +223,15 @@ const Signup = ({
               )}
             </select>
           </div>
-          {countrySelected.errMessage
-            && <span className={styles.error}>{t(countrySelected.errMessage)}</span>}
 
           <div className={styles.select}>
+            {provinceSelected.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(provinceSelected.errMessage)}
+                </span>
+              )}
             <select
               name="province"
               defaultValue={DEFAULT_SELECT}
@@ -219,10 +244,15 @@ const Signup = ({
               )}
             </select>
           </div>
-          {provinceSelected.errMessage
-            && <span className={styles.error}>{t(provinceSelected.errMessage)}</span>}
 
           <div className={styles.halfInput}>
+            {inputEmail.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(inputEmail.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="inputEmail"
@@ -232,10 +262,15 @@ const Signup = ({
               required
             />
           </div>
-          {inputEmail.errMessage
-            && <span className={styles.error}>{t(inputEmail.errMessage)}</span>}
 
           <div className={styles.halfInput}>
+            {phoneNumber.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(phoneNumber.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="phoneNumber"
@@ -245,10 +280,15 @@ const Signup = ({
               required
             />
           </div>
-          {phoneNumber.errMessage
-            && <span className={styles.error}>{t(phoneNumber.errMessage)}</span>}
 
           <div className={styles.fullInput}>
+            {password.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(password.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="password"
@@ -258,9 +298,15 @@ const Signup = ({
               required
             />
           </div>
-          {password.errMessage && <span className={styles.error}>{t(password.errMessage)}</span>}
 
           <div className={styles.fullInput}>
+            {repeatedPassword.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(repeatedPassword.errMessage)}
+                </span>
+              )}
             <input
               className={styles.input}
               name="repeatedPassword"
@@ -270,8 +316,6 @@ const Signup = ({
               required
             />
           </div>
-          {repeatedPassword.errMessage
-            && <span className={styles.error}>{t(repeatedPassword.errMessage)}</span>}
 
           <label className={styles.labelCheckbox} htmlFor="checkBoxTerms">
             <input
@@ -281,10 +325,14 @@ const Signup = ({
               onChange={handleCheckboxChange}
             />
             <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
+            {checkBoxTerms.errMessage
+              && (
+                <span className={styles.error}>
+                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
+                  {t(checkBoxTerms.errMessage)}
+                </span>
+              )}
           </label>
-
-          {checkBoxTerms.errMessage
-            && <span className={styles.error}>{t(checkBoxTerms.errMessage)}</span>}
 
           <button
             className={[
