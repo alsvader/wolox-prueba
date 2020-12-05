@@ -8,6 +8,7 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: inline-block;
+  height: 550px;
   transition: 0.3s;
   margin-bottom: 10%;
   position: relative;

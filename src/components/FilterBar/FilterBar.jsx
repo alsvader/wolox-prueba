@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { DEFAULT_SELECT } from '../../config/constants';
 import systemActions from '../../redux/system/systemActions';
 
+import styles from '../../screens/Signup/styles.module.css';
+import filterStyles from './styles.module.css';
+
 const FilterBar = ({ dispatch }) => {
   const [filters, setFilters] = useState({
     term: '',
@@ -58,49 +61,60 @@ const FilterBar = ({ dispatch }) => {
   } = filters;
 
   return (
-    <div>
-      <label htmlFor="term">{t('searchLabel')}</label>
+    <div className={filterStyles.filterContainer}>
       <input
         name="term"
         type="text"
         value={term}
         onChange={handleOnchange}
+        placeholder={t('searchLabel')}
+        className={styles.input}
       />
 
-      <input
-        type="checkbox"
-        name="backend"
-        value={backend}
-        onChange={handleCheckboxChange}
-      />
-      <label htmlFor="backend">{t('backend')}</label>
+      <div className={filterStyles.checkContainer}>
+        <input
+          className={styles.checkbox}
+          type="checkbox"
+          name="backend"
+          value={backend}
+          onChange={handleCheckboxChange}
+        />
+        <label className={filterStyles.label} htmlFor="backend">{t('backend')}</label>
+      </div>
 
-      <input
-        type="checkbox"
-        name="frontend"
-        value={frontend}
-        onChange={handleCheckboxChange}
-      />
-      <label htmlFor="frontend">{t('frontend')}</label>
+      <div className={filterStyles.checkContainer}>
+        <input
+          className={styles.checkbox}
+          type="checkbox"
+          name="frontend"
+          value={frontend}
+          onChange={handleCheckboxChange}
+        />
+        <label className={filterStyles.label} htmlFor="frontend">{t('frontend')}</label>
+      </div>
 
-      <input
-        type="checkbox"
-        name="mobile"
-        value={mobile}
-        onChange={handleCheckboxChange}
-      />
-      <label htmlFor="mobile">{t('mobile')}</label>
+      <div className={filterStyles.checkContainer}>
+        <input
+          className={styles.checkbox}
+          type="checkbox"
+          name="mobile"
+          value={mobile}
+          onChange={handleCheckboxChange}
+        />
+        <label className={filterStyles.label} htmlFor="mobile">{t('mobile')}</label>
+      </div>
 
-      <label htmlFor="orderBy">{t('orderBy')}</label>
-      <select
-        name="orderBy"
-        value={orderBy}
-        onChange={handleOnchange}
-      >
-        <option value={DEFAULT_SELECT}>{t('select_option')}</option>
-        <option value="asc">{t('nameAsc')}</option>
-        <option value="desc">{t('nameDesc')}</option>
-      </select>
+      <div className={[styles.select, filterStyles.order].join(' ')}>
+        <select
+          name="orderBy"
+          value={orderBy}
+          onChange={handleOnchange}
+        >
+          <option value={DEFAULT_SELECT}>{t('orderBy')}</option>
+          <option value="asc">{t('nameAsc')}</option>
+          <option value="desc">{t('nameDesc')}</option>
+        </select>
+      </div>
     </div>
   );
 };

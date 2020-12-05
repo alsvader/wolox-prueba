@@ -1,0 +1,74 @@
+.filterContainer {
+  margin-bottom: 7%;
+  width: 100%;
+}
+.filterContainer input[type="text"] {
+  display: block;
+  margin-bottom: 7%;
+  width: 90%;
+}
+.checkContainer {
+  display: block;
+}
+input[type="checkbox"] {
+  margin-bottom: 5%;
+  font-size: 40px;
+}
+.label {
+  font-size: 20px;
+  width: 100%;
+}
+.order {
+  margin-top: 5%;
+  margin-left: 0% !important;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .filterContainer input[type="text"] {
+    padding: 3%;
+  }
+  .order select {
+    padding: 3%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .filterContainer input[type="text"] {
+    margin-bottom: 2%;
+  }
+  .order {
+    margin-top: 0%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .filterContainer input[type="text"] {
+    display: inline-block;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    padding: 1%;
+    vertical-align: top;
+    width: 20%;
+  }
+  input[type="checkbox"] {
+    margin-bottom: 1%;
+    margin-right: 5%;
+  }
+  .order {
+    margin-top: 10;
+    vertical-align: top;
+    width: 22%;
+  }
+  .order select {
+    padding: 5%;
+  }
+  .filterContainer {
+    margin-bottom: 0;
+    margin-left: 5%;
+    width: 90%;
+  }
+  .checkContainer {
+    display: inline-block;
+    margin-left: 2%;
+    width: 10%;
+  }
+}
