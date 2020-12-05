@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { Redirect } from 'react-router-dom';
 import PATHS from '../../config/paths';
 import { DEFAULT_SELECT } from '../../config/constants';
 import { validateInput, isFormValid } from '../../utils/inputValidation';
@@ -12,6 +9,8 @@ import mapDataToSignup from '../../utils/mapDataToBody';
 import countries from '../../api/__mock__/countries.json';
 
 import signup from '../../redux/middlewares/signupMiddleware';
+import FormSignup from './components/FormSignup/FormSignup';
+import Loader from '../../components/Loader/Loader';
 
 import styles from './styles.module.css';
 
@@ -21,12 +20,12 @@ const initialState = {
   isValid: false,
 };
 
-const Signup = ({
+function Signup({
   dispatch,
   isAuthenticated,
   isLoading,
   errorMessage,
-}) => {
+}) {
   const [state, setstate] = useState({
     inputName: { ...initialState },
     inputLastname: { ...initialState },
@@ -39,7 +38,6 @@ const Signup = ({
     checkBoxTerms: { ...initialState },
   });
   const [listProvinces, setListProvinces] = useState([]);
-  const { t } = useTranslation();
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -135,10 +133,6 @@ const Signup = ({
     dispatch(signup(body));
   };
 
-  if (isAuthenticated) {
-    return <Redirect to={PATHS.LIST_TECHNOLIGIES} />;
-  }
-
   const {
     inputName,
     inputLastname,
@@ -153,204 +147,41 @@ const Signup = ({
 
   const isBtnDisabled = isFormValid(state);
 
-  return (
-    <>
-      <div className={styles.formContainer}>
-        <h1>{t('signupTitle')}</h1>
-        {errorMessage && (
-          <span>{errorMessage}</span>
-        )}
-        <form onSubmit={handleFormSubmit}>
+  if (isAuthenticated) {
+    return <Redirect to={PATHS.LIST_TECHNOLIGIES} />;
+  }
 
-          <div className={styles.halfInput}>
-            {inputName.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(inputName.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="inputName"
-              type="text"
-              maxLength="30"
-              placeholder={t('name')}
-              value={inputName.value}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.halfInput}>
-            {inputLastname.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(inputLastname.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="inputLastname"
-              type="text"
-              maxLength="30"
-              placeholder={t('lastname')}
-              value={inputLastname.value}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.select}>
-            {countrySelected.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(countrySelected.errMessage)}
-                </span>
-              )}
-
-            <select
-              name="country"
-              defaultValue={DEFAULT_SELECT}
-              onChange={handleCountryChange}
-              required
-            >
-              <option value={DEFAULT_SELECT}>{t('select_country')}</option>
-              {countries.map(
-                (item, key) => <option key={key} value={item.value}>{item.label}</option>,
-              )}
-            </select>
-          </div>
-
-          <div className={styles.select}>
-            {provinceSelected.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(provinceSelected.errMessage)}
-                </span>
-              )}
-            <select
-              name="province"
-              defaultValue={DEFAULT_SELECT}
-              onChange={handleProvinceChange}
-              required
-            >
-              <option value={DEFAULT_SELECT}>{t('select_province')}</option>
-              {listProvinces.map(
-                (item, key) => <option key={key} value={item.value}>{item.label}</option>,
-              )}
-            </select>
-          </div>
-
-          <div className={styles.halfInput}>
-            {inputEmail.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(inputEmail.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="inputEmail"
-              type="email"
-              placeholder={t('email')}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.halfInput}>
-            {phoneNumber.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(phoneNumber.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="phoneNumber"
-              type="tel"
-              placeholder={t('phoneNumber')}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.fullInput}>
-            {password.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(password.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="password"
-              type="password"
-              placeholder={t('password')}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.fullInput}>
-            {repeatedPassword.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(repeatedPassword.errMessage)}
-                </span>
-              )}
-            <input
-              className={styles.input}
-              name="repeatedPassword"
-              type="password"
-              placeholder={t('repeatPassword')}
-              onChange={handleRepeatedPasswd}
-              required
-            />
-          </div>
-
-          <label className={styles.labelCheckbox} htmlFor="checkBoxTerms">
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              name="checkBoxTerms"
-              onChange={handleCheckboxChange}
-            />
-            <Link to={PATHS.TERMS_CONDITIONS} target="_blank">{t('checkboxTerms')}</Link>
-            {checkBoxTerms.errMessage
-              && (
-                <span className={styles.error}>
-                  <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-                  {t(checkBoxTerms.errMessage)}
-                </span>
-              )}
-          </label>
-
-          <button
-            className={[
-              styles.btn,
-              styles.info,
-              styles.btnSignup,
-            ].join(' ')}
-            type="submit"
-            disabled={!isBtnDisabled}
-          >
-            {t('submit')}
-          </button>
-        </form>
+  if (isLoading) {
+    return (
+      <div className={styles.loaderContainer}>
+        <Loader />
       </div>
-      { isLoading && <p>loading...</p>}
-    </>
+    );
+  }
+
+  return (
+    <FormSignup
+      inputName={inputName}
+      inputLastname={inputLastname}
+      inputEmail={inputEmail}
+      countrySelected={countrySelected}
+      provinceSelected={provinceSelected}
+      phoneNumber={phoneNumber}
+      password={password}
+      repeatedPassword={repeatedPassword}
+      checkBoxTerms={checkBoxTerms}
+      handleInputChange={handleInputChange}
+      handleCountryChange={handleCountryChange}
+      handleProvinceChange={handleProvinceChange}
+      handleRepeatedPasswd={handleRepeatedPasswd}
+      handleCheckboxChange={handleCheckboxChange}
+      handleFormSubmit={handleFormSubmit}
+      isBtnDisabled={isBtnDisabled}
+      listProvinces={listProvinces}
+      errorMessage={errorMessage}
+    />
   );
-};
+}
 
 const mapStateToProps = ({
   user: { isAuthenticated },

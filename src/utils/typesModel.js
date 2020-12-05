@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const { string, shape } = PropTypes;
+const { string, shape, bool } = PropTypes;
 
 const techType = shape({
   tech: string,
@@ -10,6 +10,12 @@ const techType = shape({
   language: string,
   type: string,
   logo: string,
+});
+
+export const inputModel = shape({
+  value: string,
+  errMessage: string,
+  isValid: bool,
 });
 
 export default techType;
