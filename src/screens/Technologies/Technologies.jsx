@@ -7,6 +7,7 @@ import systemActions from '../../redux/system/systemActions';
 import FilterBar from '../../components/FilterBar/FilterBar';
 import ListItems from '../../components/ListItems/ListItems';
 import ListContext from '../../providers';
+import Loader from '../../components/Loader/Loader';
 
 import styles from './styles.module.css';
 
@@ -33,7 +34,11 @@ const Technologies = ({
     <div className={styles.listContainer}>
       <FilterBar />
 
-      {isLoading && <p>loading...</p>}
+      {isLoading && (
+        <div className="loaderContainer">
+          <Loader />
+        </div>
+      )}
 
       {errorMessage && <p>{errorMessage}</p>}
 

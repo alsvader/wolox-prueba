@@ -6,10 +6,10 @@
   padding-top: 3%;
   width: 95%;
 }
-.loaderContainer {
+/* .loaderContainer {
   margin-left: 25%;
   width: 50%;
-}
+} */
 .formContainer:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -149,10 +149,10 @@
   .halfInput:nth-child(even) {
     margin-left: 9%;
   }
-  .loaderContainer {
+  /* .loaderContainer {
     margin-left: 35%;
     width: 30%;
-  }
+  } */
 }
 
 @media screen and (min-width: 992px) {
@@ -169,10 +169,10 @@
     margin-right: 1%;
     margin-bottom: 3%;
   }
-  .loaderContainer {
+  /* .loaderContainer {
     margin-left: 38%;
     width: 30%;
-  }
+  } */
 }
 
 @media screen and (min-width: 1200px) {
@@ -180,8 +180,8 @@
     margin-left: 30%;
     width: 40%;
   }
-  .loaderContainer {
+  /* .loaderContainer {
     margin-left: 44%;
     width: 22%;
-  }
+  } */
 }

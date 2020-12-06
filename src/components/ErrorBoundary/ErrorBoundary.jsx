@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Error from '../Error/Error';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -16,8 +17,8 @@ class ErrorBoundary extends Component {
     const { hasError } = this.state;
     const { children } = this.props;
 
-    if (hasError) {
-      return <h1>Something went wrong.</h1>;
+    if (!hasError) {
+      return <Error />;
     }
 
     return children;

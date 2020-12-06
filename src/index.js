@@ -5,11 +5,17 @@ import './index.css';
 import App from './App';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import reportWebVitals from './reportWebVitals';
+import Loader from './components/Loader/Loader';
 import './config/i18n';
 
 ReactDOM.render(
   <ErrorBoundary>
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={(
+      <div className="loaderContainer">
+        <Loader />
+      </div>
+    )}
+    >
       <App />
     </Suspense>
   </ErrorBoundary>,

@@ -57,5 +57,6 @@
   "invitation": "Te invitamos a ver mas información",
   "learnMore": "Conocer más",
   "benefitsTitle": "Entre los beneficios que ofrecemos se encuentran ",
-  "signupTitle": "Registro"
+  "signupTitle": "Registro",
+  "errorPageTitle": "Error Inesperado :("
 }
